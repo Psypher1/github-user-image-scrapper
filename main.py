@@ -3,12 +3,15 @@ from bs4 import BeautifulSoup as bs
 
 
 def scrape_image():
-    github_user = input("Enter User Handle:")
+    # prompt user for github username
+    github_user = input("Enter Username:")
+    #
     github_url = "https://github.com/"
+    # construct url to fetch from
     full_url = f"{github_url}{github_user}"
 
-    print("one:", github_url)
-    print("two:", full_url)
+    # print("one:", github_url)
+    # print("two:", full_url)
 
     request = requests.get(full_url)
     soup = bs(request.content, "html.parser")
